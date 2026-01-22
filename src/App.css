@@ -2,6 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Borel&family=Meow+Script&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oranienbaum&display=swap');
 @import "tailwindcss";
 
+html {
+  scroll-padding-top: 125px; 
+  scroll-behavior: smooth;
+}
+
 .hero {
   position: relative;
   height: 100vh;
@@ -163,5 +168,11 @@ button:hover {
   margin-left: 20px;
 }
 }
+
+/* Bridal section */
+
+/* .bridalImage {
+  height: ;
+} */
 
 

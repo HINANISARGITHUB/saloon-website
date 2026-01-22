@@ -5,7 +5,7 @@ import { Facebook, Instagram, Sprout } from 'lucide-react';
 
 const NewsletterSection = () => {
   return (
-    <div className="relative min-h-screen w-full flex flex-col items-center justify-center bg-[#fcfbf9] font-serif overflow-hidden">
+    <div id='footer' className="relative min-h-screen w-full flex flex-col items-center justify-center bg-[#fcfbf9] font-serif overflow-hidden">
       
       {/* 2. Background Layer: Isse image hamesha visible rahegi */}
       <div 

@@ -6,7 +6,7 @@ import blog4 from "./assets/blog-4.png";
 
 const blog = () => {
   return (
-    <div>
+    <div id="blog">
       {/* Heading */}
       <div className="text-center mt-10 lg:mt-24">
         <h1 className="text-[#f8be29] font-[Montserrat]">READ OUR BLOG</h1>

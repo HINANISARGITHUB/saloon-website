@@ -7,7 +7,7 @@ import mehndi from "./assets/mehndi.jpg";
 
 const ServiceCard = () => {
   return (
-    <div>
+    <div id="serviceCard">
       {/* Heading */}
       <div className="text-center py-10 lg:py-16">
         <h1 className="text-[#f8be29] font-[Montserrat]">

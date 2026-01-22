@@ -1,45 +1,67 @@
 import { useState, useMemo, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import logo from "./assets/nav-logo1.png";
 
 const Navbar = () => {
+  // navigate
+  const navigate = useNavigate();
+
+  const searchPages = {
+    bridal: "/bridal",
+    skincare: "/skinCare",
+    hairCare: "/hairCare",
+  };
+
+
+  // ////////////////
   const [text, setText] = useState("");
   const [history, setHistory] = useState([]);
 
-  const suggestion = useMemo(() => {
-    return history.filter((item) =>
-      item.toLowerCase().includes(text.toLowerCase()),
-    );
-  }, [text, history]);
+  // suggestion dropdown
+  // const suggestion = useMemo(() => {
+  //   return history.filter((item) =>
+  //     item.toLowerCase().includes(text.toLowerCase()),
+  //   );
+  // }, [text, history]);
 
-  const search = () => {
-    if (text && !history.includes(text)) {
-      setHistory([...history, text]);
-    }
-  };
+  // search buuton click
+    const search = () => {
+  if (text && !history.includes(text)) {
+    setHistory([...history, text]);
+  }
+
+  const path = searchPages[text.toLowerCase()];
+  if (path) {
+    navigate(path);
+  }
+};
 
   const [open, setOpen] = useState(false);
   // const [text1, setText1] = useState("");
   // const [history1, setHistory1] = useState([]);
-  const navItems = [
-    "HOME",
-    "ABOUT US",
-    "OUR SERVICES",
-    "GALLERY",
-    "MAKEUP CATALOGUE",
-    "CONTACT US",
-  ];
+  // const navItems = [
+  //   "HOME",
+  //   "ABOUT US",
+  //   "OUR SERVICES",
+  //   "GALLERY",
+  //   "MAKEUP CATALOGUE",
+  //   "CONTACT US",
+  // ];
 
   return (
     <>
       {/* Top bar */}
-      <div className="bg-[#f6c3aa] text-center p-2 text-[16px] sticky top-0 z-60">
+      <div
+        className="bg-[#f6c3aa] text-center p-2 text-[16px] sticky top-0 z-60"
+        id="home"
+      >
         Welcome to Hina's Salon and Studio
       </div>
 
       {/* Header */}
       <header className="sticky top-10 w-full bg-white z-50 shadow-md">
-        {/* Desktop Top Links */}
-        <nav className="hidden lg:flex justify-center pt-8">
+        {/* Desktop Top Links  by map*/}
+        {/* <nav className="hidden lg:flex justify-center pt-8">
           <ul className="flex space-x-8 text-sm font-medium">
             {navItems.map((item) => (
               <li key={item}>
@@ -54,11 +76,47 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
+        </nav> */}
+
+        {/* Desktop Menu - Kept exactly as your original */}
+        <nav className="hidden lg:flex ml-72 bg-neutral-secondary-soft pt-6 ">
+          <ul className="flex space-x-8 text-sm font-medium">
+            <li>
+              <a href="#hero" className="text-[#f8be29] hover:text-black">
+                HOME
+              </a>
+            </li>
+            <li>
+              <a href="#services" className="hover:text-[#f8be29]">
+                ABOUT US
+              </a>
+            </li>
+            <li>
+              <a href="#serviceCard" className="hover:text-[#f8be29]">
+                OUR SERVICES
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-[#f8be29]">
+                GALLERY
+              </a>
+            </li>
+            <li>
+              <a href="#blog" className="hover:text-[#f8be29]">
+                MAKEUP CATALOGUE
+              </a>
+            </li>
+            <li>
+              <a href="#footer" className="hover:text-[#f8be29]">
+                CONTACT US
+              </a>
+            </li>
+          </ul>
         </nav>
 
         {/* Main Header Row */}
-        <nav className="flex justify-between items-center max-w-7xl mx-auto p-4 lg:p-6">
-          <img src={logo} alt="logo" className="h-18 lg:h-24 object-contain" />
+        <nav className="flex justify-between items-center max-w-7xl mx-auto p-4 lg:pt-2">
+          <img src={logo} alt="logo" className="h-18 lg:h-28 object-contain" />
 
           {/* Desktop Search - Fixed Alignment */}
 
@@ -99,19 +157,26 @@ const Navbar = () => {
               </div>
 
               {/* Suggestions Dropdown */}
-              {text && suggestion.length > 0 && (
+              {/* {text && suggestion.length > 0 && (
                 <div className="absolute top-full left-0 w-full bg-white border border-gray-200 rounded-md shadow-md z-50">
                   {suggestion.map((item, i) => (
                     <div
                       key={i}
-                      onClick={() => setText(item)}
+                      // onClick={() => setText(item)}
+                      onClick={() => {
+                        setText(item);
+                        const path = searchPages[item.toLowerCase()];
+                        if (path) {
+                          navigate(path); // 👈 NEW PAGE OPEN
+                        }
+                      }}
                       className="px-4 py-2 text-sm cursor-pointer hover:bg-gray-100"
                     >
                       {item}
                     </div>
                   ))}
                 </div>
-              )}
+              )} */}
             </div>
           </div>
 
@@ -204,22 +269,31 @@ const Navbar = () => {
             </button>
           </div>
 
-          {text &&
+          {/* suggestion drop down */}
+
+          {/* {text &&
             suggestion.map((item, i) => (
               <div
                 className="history-div px-4 py-2 text-sm cursor-pointer hover:bg-gray-100 bg-white
              border-l border-r border-gray-300 shadow-md z-50"
                 key={i}
-                onClick={() => setText(item)}
+                onClick={() => {
+                  setText(item);
+                  const path = searchPages[item.toLowerCase()];
+                  if (path) {
+                    navigate(path);
+                    setOpen(false); // mobile menu close
+                  }
+                }}
               >
                 {item}
               </div>
-            ))}
+            ))} */}
         </div>
 
         {/* Menu Items */}
         <div className="flex flex-col h-[calc(100vh-160px)] p-6">
-          <ul className="flex flex-col gap-6 text-sm font-medium">
+          {/* <ul className="flex flex-col gap-6 text-sm font-medium">
             {[
               "HOME",
               "ABOUT US",
@@ -234,6 +308,39 @@ const Navbar = () => {
                 </a>
               </li>
             ))}
+          </ul> */}
+
+          <ul className="flex flex-col gap-6 text-sm font-medium">
+            <li>
+              <a href="#" className="text-[#f8be29] hover:text-black">
+                HOME
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-[#f8be29]">
+                ABOUT US
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-[#f8be29]">
+                OUR SERVICES
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-[#f8be29]">
+                GALLERY
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-[#f8be29]">
+                MAKEUP CATALOGUE
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-[#f8be29]">
+                CONTACT US
+              </a>
+            </li>
           </ul>
 
           {/* Book Now Button */}

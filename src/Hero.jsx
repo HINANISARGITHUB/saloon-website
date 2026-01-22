@@ -30,7 +30,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="hero">
+    <section className="hero" id="hero">
       {slidesData.map((slide, index) => (
         <div
           key={index}

@@ -5,11 +5,11 @@ import service3 from './assets/services-img3.jpg';
 
 const sevices = () => {
   return (
-    <div className="px-4 md:px-10 lg:px-20 lg:py-28 py-10">
+    <div className=" px-4 md:px-10 lg:px-20 lg:py-28 py-10" id='services'>
       
       {/* Heading */}
       <div className="text-center">
-        <h1 className="text-[#f8be29] font-[Montserrat]">OUR SERVICES</h1>
+        <h1 className="text-[#f8be29] font-[Montserrat]" >OUR SERVICES</h1>
 
         <h1 className="text-3xl lg:text-[60px] font-[Oranienbaum] mt-6 text-[#221d1a]">
           Your Satisfication Is
