@@ -315,17 +315,17 @@ const Navbar = () => {
 
           <ul className="flex flex-col gap-6 text-sm font-medium">
             <li>
-              <a href="#" className="text-[#f8be29] hover:text-black">
+              <a href="#hero" className="text-[#f8be29] hover:text-black">
                 HOME
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-[#f8be29]">
+              <a href="#services" className="hover:text-[#f8be29]">
                 ABOUT US
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-[#f8be29]">
+              <a href="#serviceCard" className="hover:text-[#f8be29]">
                 OUR SERVICES
               </a>
             </li>
@@ -335,12 +335,12 @@ const Navbar = () => {
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-[#f8be29]">
+              <a href="#blog" className="hover:text-[#f8be29]">
                 MAKEUP CATALOGUE
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-[#f8be29]">
+              <a href="#footer" className="hover:text-[#f8be29]">
                 CONTACT US
               </a>
             </li>
