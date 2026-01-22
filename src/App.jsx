@@ -6,7 +6,7 @@ import Studio from "./Studio";
 // import Demo from "./demo1";
 import ServiceCard from "./ServiceCard";
 import CustomerOffer from "./Customeroffer";
-import Video from "./Video";
+import Video from "./video";
 import LeaderPage from "./LeaderPage";
 import Blog from './blog'
 import Footer from './footer'
