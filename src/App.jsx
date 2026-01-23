@@ -16,10 +16,7 @@ import SkinCare from "./pages/SkinCare";
 import HairCare from "./pages/HairCare";
 import Mehndi from "./pages/Mehndi"
 import Wax from "./pages/Wax";
-import ScrollToTop from "./ScrollToTop";
-
-
-
+import ScrollToTop from './ScrollToTop';
 
 // function App() {
 

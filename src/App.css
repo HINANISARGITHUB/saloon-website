@@ -4,8 +4,7 @@
 
 html {
   scroll-padding-top: 125px; 
-
-  scroll-behavior: auto;
+scroll-behavior: smooth;
 
 }
 
