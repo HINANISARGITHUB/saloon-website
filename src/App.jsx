@@ -17,6 +17,10 @@ import SkinCare from "./pages/SkinCare";
 import HairCare from "./pages/HairCare";
 import Mehndi from "./pages/Mehndi"
 import Wax from "./pages/Wax";
+import ScrollToTop from "./ScrollToTop";
+
+
+
 
 // function App() {
 
@@ -42,13 +46,16 @@ import Wax from "./pages/Wax";
 // export default App;
 
 
+
+
 function App() {
   return (
     <BrowserRouter>
-      <Navbar/>
+      <ScrollToTop />   {/* top scrolling */}
+
+      <Navbar />
 
       <Routes>
-        {/* Home Page */}
         <Route
           path="/"
           element={
@@ -66,16 +73,11 @@ function App() {
           }
         />
 
-        {/* Bridal Page */}
-        <Route path="/bridal" element={<Bridal/>} />
-        <Route path="/skinCare" element={<SkinCare/>} />
-        <Route path="/hairCare" element={<HairCare/>} />
-        <Route path="/mehndi" element={<Mehndi/>} />
-        <Route path="/wax" element={<Wax/>} />
-
-
-
-
+        <Route path="/bridal" element={<Bridal />} />
+        <Route path="/skinCare" element={<SkinCare />} />
+        <Route path="/hairCare" element={<HairCare />} />
+        <Route path="/mehndi" element={<Mehndi />} />
+        <Route path="/wax" element={<Wax />} />
       </Routes>
     </BrowserRouter>
   );

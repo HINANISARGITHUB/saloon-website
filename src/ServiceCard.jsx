@@ -4,8 +4,11 @@ import service3 from "./assets/services-img3.jpg";
 import royalBride from "./assets/royal-bridal.jpg";
 import waxing from "./assets/bodywax.jpg";
 import mehndi from "./assets/mehndi.jpg";
+import { useNavigate } from "react-router-dom";
+
 
 const ServiceCard = () => {
+   const navigate = useNavigate();
   return (
     <div id="serviceCard">
       {/* Heading */}
@@ -35,7 +38,7 @@ const ServiceCard = () => {
         "
       >
         {/* Card 1 */}
-        <div className="w-full max-w-60 text-center">
+        <div onClick={() => navigate("/skinCare")} className="w-full max-w-60 text-center">
           <img
             src={skinCare}
             className="w-full rounded-tl-[150px] rounded-tr-[150px]
@@ -56,7 +59,7 @@ const ServiceCard = () => {
         </div>
 
         {/* Card 2 */}
-        <div className="w-full max-w-60 text-center">
+        <div  onClick={() => navigate("/wax")} className="w-full max-w-60 text-center">
           <img
             src={waxing}
             className="w-full rounded-bl-[150px] rounded-br-[150px]
@@ -77,7 +80,7 @@ const ServiceCard = () => {
         </div>
 
         {/* Card 3 */}
-        <div className="w-full max-w-60 text-center">
+        <div  onClick={() => navigate("/bridal")} className="w-full max-w-60 text-center">
           <img
             src={royalBride}
             className="w-full rounded-tl-[150px] rounded-tr-[150px]
@@ -97,7 +100,7 @@ const ServiceCard = () => {
         </div>
 
         {/* Card 4 */}
-        <div className="w-full max-w-60 text-center">
+        <div  onClick={() => navigate("/mehndi")} className="w-full max-w-60 text-center">
           <img
             src={mehndi}
             className="w-full rounded-bl-[150px] rounded-br-[150px]
@@ -118,7 +121,7 @@ const ServiceCard = () => {
         </div>
 
         {/* Card 5 */}
-        <div className="w-full max-w-60 text-center">
+        <div onClick={() => navigate("/hairCare")} className="w-full max-w-60 text-center">
           <img
             src={service3}
             className="w-full rounded-tl-[150px] rounded-tr-[150px]
