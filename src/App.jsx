@@ -3,7 +3,6 @@ import Navbar from "./Navbar";
 import Hero from "./Hero";
 import Services from "./Services";
 import Studio from "./Studio";
-// import Demo from "./demo1";
 import ServiceCard from "./ServiceCard";
 import CustomerOffer from "./Customeroffer";
 import Video from "./video";

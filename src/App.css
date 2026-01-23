@@ -4,7 +4,9 @@
 
 html {
   scroll-padding-top: 125px; 
-  scroll-behavior: smooth;
+
+  scroll-behavior: auto;
+
 }
 
 .hero {
